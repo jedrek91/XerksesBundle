@@ -1,0 +1,23 @@
+#src/Aldor/InftechBundle/Resources/config/doctrine/Post.orm.yml
+Studia\XerksesBundle\Entity\Favourites:
+    type: entity
+    repositoryClass: Studia\XerksesBundle\Repository\FavouritesRepository
+    table: favourites
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    manyToOne:
+        users:
+            targetEntity: User
+            inversedBy: favourites
+            joinColumn:
+                name: userid
+                referencedColumnName: id
+        xeros:
+            targetEntity: Xero
+            inversedBy: favourites
+            joinColumn:
+                name: xeroid
+                referencedColumnName: id
+  

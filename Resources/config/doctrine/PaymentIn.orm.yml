@@ -1,0 +1,26 @@
+#src/Aldor/InftechBundle/Resources/config/doctrine/Post.orm.yml
+Studia\XerksesBundle\Entity\PaymentIn:
+    type: entity
+    repositoryClass: Studia\XerksesBundle\Repository\PaymentInRepository
+    table: paymentin
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        date:
+            type: datetime
+        value:
+            type: float
+        source:
+            type: string
+            length: 20
+    manyToOne:
+        users:
+            targetEntity: User
+            inversedBy: paymentin
+            joinColumn:
+                name: userid
+                referencedColumnName: id
+    lifecycleCallbacks:
+            prePersist: [ setDateAtValue ]

@@ -1,0 +1,111 @@
+<?php
+
+namespace Studia\XerksesBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Prices
+ */
+class Prices
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var float
+     */
+    private $pricevalue;
+
+    /**
+     * @var \Studia\XerksesBundle\Entity\ServiceTyp
+     */
+    private $typofservice;
+
+    /**
+     * @var \Studia\XerksesBundle\Entity\Xero
+     */
+    private $xeros;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set pricevalue
+     *
+     * @param float $pricevalue
+     * @return Prices
+     */
+    public function setPricevalue($pricevalue)
+    {
+        $this->pricevalue = $pricevalue;
+    
+        return $this;
+    }
+
+    /**
+     * Get pricevalue
+     *
+     * @return float 
+     */
+    public function getPricevalue()
+    {
+        return $this->pricevalue;
+    }
+
+    /**
+     * Set typofservice
+     *
+     * @param \Studia\XerksesBundle\Entity\ServiceTyp $typofservice
+     * @return Prices
+     */
+    public function setTypofservice(\Studia\XerksesBundle\Entity\ServiceTyp $typofservice = null)
+    {
+        $this->typofservice = $typofservice;
+    
+        return $this;
+    }
+
+    /**
+     * Get typofservice
+     *
+     * @return \Studia\XerksesBundle\Entity\ServiceTyp 
+     */
+    public function getTypofservice()
+    {
+        return $this->typofservice;
+    }
+
+    /**
+     * Set xeros
+     *
+     * @param \Studia\XerksesBundle\Entity\Xero $xeros
+     * @return Prices
+     */
+    public function setXeros(\Studia\XerksesBundle\Entity\Xero $xeros = null)
+    {
+        $this->xeros = $xeros;
+    
+        return $this;
+    }
+
+    /**
+     * Get xeros
+     *
+     * @return \Studia\XerksesBundle\Entity\Xero 
+     */
+    public function getXeros()
+    {
+        return $this->xeros;
+    }
+}

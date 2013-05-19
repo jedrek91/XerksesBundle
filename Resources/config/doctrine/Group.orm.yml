@@ -1,0 +1,10 @@
+#src/Aldor/InftechBundle/Resources/config/doctrine/Post.orm.yml
+Studia\XerksesBundle\Entity\Group:
+    type: entity
+    repositoryClass: Studia\XerksesBundle\Repository\GroupRepository
+    table: usergroup
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+

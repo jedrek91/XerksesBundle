@@ -1,0 +1,25 @@
+#src/Aldor/InftechBundle/Resources/config/doctrine/Post.orm.yml
+Studia\XerksesBundle\Entity\User:
+    type: entity
+    repositoryClass: Studia\XerksesBundle\Repository\UserRepository
+    table: User
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    oneToMany:
+        opinions:
+            targetEntity: Opinion
+            mappedBy: users
+        orders:
+            targetEntity: Order
+            mappedBy: users
+        paymentin:
+            targetEntity: PaymentIn
+            mappedBy: users
+        paymentout:
+            targetEntity: PaymentOut
+            mappedBy: users
+        favourites:
+            targetEntity: Favourites
+            mappedBy: users

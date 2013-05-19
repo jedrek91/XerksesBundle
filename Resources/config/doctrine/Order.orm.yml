@@ -1,0 +1,42 @@
+#src/Aldor/InftechBundle/Resources/config/doctrine/Post.orm.yml
+Studia\XerksesBundle\Entity\Order:
+    type: entity
+    repositoryClass: Studia\XerksesBundle\Repository\OrderRepository
+    table: orders
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        date:
+            type: datetime
+        comment:
+            type: text
+        file:
+            type: string
+            length: 50
+        status:
+            type: string
+            length: 20
+    manyToOne:
+        xeros:
+            targetEntity: Xero
+            inversedBy: orders
+            joinColumn:
+                name: xeroid
+                referencedColumnName: id
+        typofservice:
+            targetEntity: ServiceTyp
+            inversedBy: orders
+            joincolumn:
+                name: servicetypid
+                referencedColumnName: id
+        users:
+            targetEntity: User
+            inversedBy: orders
+            joinColumn:
+                name: userid
+                referencedColumnName: id
+        
+    lifecycleCallbacks:
+            prePersist: [ setDateAtValue ]

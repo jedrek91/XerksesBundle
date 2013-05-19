@@ -1,0 +1,139 @@
+<?php
+
+namespace Studia\XerksesBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Address
+ */
+class Address
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var string
+     */
+    private $place;
+
+    /**
+     * @var string
+     */
+    private $street;
+
+    /**
+     * @var string
+     */
+    private $postcode;
+
+    /**
+     * @var \Studia\XerksesBundle\Entity\Xero
+     */
+    private $xero;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set place
+     *
+     * @param string $place
+     * @return Address
+     */
+    public function setPlace($place)
+    {
+        $this->place = $place;
+    
+        return $this;
+    }
+
+    /**
+     * Get place
+     *
+     * @return string 
+     */
+    public function getPlace()
+    {
+        return $this->place;
+    }
+
+    /**
+     * Set street
+     *
+     * @param string $street
+     * @return Address
+     */
+    public function setStreet($street)
+    {
+        $this->street = $street;
+    
+        return $this;
+    }
+
+    /**
+     * Get street
+     *
+     * @return string 
+     */
+    public function getStreet()
+    {
+        return $this->street;
+    }
+
+    /**
+     * Set postcode
+     *
+     * @param string $postcode
+     * @return Address
+     */
+    public function setPostcode($postcode)
+    {
+        $this->postcode = $postcode;
+    
+        return $this;
+    }
+
+    /**
+     * Get postcode
+     *
+     * @return string 
+     */
+    public function getPostcode()
+    {
+        return $this->postcode;
+    }
+
+    /**
+     * Set xero
+     *
+     * @param \Studia\XerksesBundle\Entity\Xero $xero
+     * @return Address
+     */
+    public function setXero(\Studia\XerksesBundle\Entity\Xero $xero = null)
+    {
+        $this->xero = $xero;
+    
+        return $this;
+    }
+
+    /**
+     * Get xero
+     *
+     * @return \Studia\XerksesBundle\Entity\Xero 
+     */
+    public function getXero()
+    {
+        return $this->xero;
+    }
+}

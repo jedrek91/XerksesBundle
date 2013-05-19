@@ -1,0 +1,45 @@
+Studia\XerksesBundle\Entity\Xero:
+    type: entity
+    repositoryClass: Studia\XerksesBundle\Repository\XeroRepository
+    table: xero
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 20
+        coordinate:
+            type: string
+            length: 20
+        state:
+            type: string
+            length: 20
+    oneToOne:
+        address:
+            targetEntity: Address
+            inversedBy: xero
+            joinColumn:
+                name: addressid
+                referencedColumnName: id
+    oneToMany:
+        orders:
+            targetEntity: Order
+            mappedBy: xeros
+        paymentout:
+            targetEntity: PaymentOut
+            mappedBy: xeros
+        favourites:
+            targetEntity: Favourites
+            mappedBy: xeros
+        employees:
+            targetEntity: Employee
+            mappedBy: xero
+        prices:
+            targetEntity: Prices
+            mappedBy: xero
+        opinions:
+            targetEntity: Opinion
+            mappedBy: xeros
+

@@ -1,0 +1,7 @@
+parameters:
+#    xerkses.example.class: Studia\XerksesBundle\Example
+
+services:
+#    xerkses.example:
+#        class: %xerkses.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

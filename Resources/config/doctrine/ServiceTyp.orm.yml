@@ -1,0 +1,21 @@
+Studia\XerksesBundle\Entity\ServiceTyp:
+    type: entity
+    repositoryClass: Studia\XerksesBundle\Repository\ServiceTypRepository
+    table: servicetyp
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 20
+    oneToOne:
+        prices:
+            targetEntity: Prices
+            mappedBy: typofservice
+    oneToMany:
+         orders:
+            targetEntity: Order
+            mappedBy: typofservice
+              

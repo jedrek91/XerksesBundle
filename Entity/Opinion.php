@@ -1,0 +1,167 @@
+<?php
+
+namespace Studia\XerksesBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Opinion
+ */
+class Opinion
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+    /**
+     * @var integer
+     */
+    private $rating;
+
+    /**
+     * @var string
+     */
+    private $attention;
+
+    /**
+     * @var \DateTime
+     */
+    private $date;
+
+    /**
+     * @var \Studia\XerksesBundle\Entity\User
+     */
+    private $users;
+
+    /**
+     * @var \Studia\XerksesBundle\Entity\Xero
+     */
+    private $xeros;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set rating
+     *
+     * @param integer $rating
+     * @return Opinion
+     */
+    public function setRating($rating)
+    {
+        $this->rating = $rating;
+    
+        return $this;
+    }
+
+    /**
+     * Get rating
+     *
+     * @return integer 
+     */
+    public function getRating()
+    {
+        return $this->rating;
+    }
+
+    /**
+     * Set attention
+     *
+     * @param string $attention
+     * @return Opinion
+     */
+    public function setAttention($attention)
+    {
+        $this->attention = $attention;
+    
+        return $this;
+    }
+
+    /**
+     * Get attention
+     *
+     * @return string 
+     */
+    public function getAttention()
+    {
+        return $this->attention;
+    }
+
+    /**
+     * Set date
+     *
+     * @param \DateTime $date
+     * @return Opinion
+     */
+    public function setDate($date)
+    {
+        $this->date = $date;
+    
+        return $this;
+    }
+
+    /**
+     * Get date
+     *
+     * @return \DateTime 
+     */
+    public function getDate()
+    {
+        return $this->date;
+    }
+
+    /**
+     * Set users
+     *
+     * @param \Studia\XerksesBundle\Entity\User $users
+     * @return Opinion
+     */
+    public function setUsers(\Studia\XerksesBundle\Entity\User $users = null)
+    {
+        $this->users = $users;
+    
+        return $this;
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Studia\XerksesBundle\Entity\User 
+     */
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+    /**
+     * Set xeros
+     *
+     * @param \Studia\XerksesBundle\Entity\Xero $xeros
+     * @return Opinion
+     */
+    public function setXeros(\Studia\XerksesBundle\Entity\Xero $xeros = null)
+    {
+        $this->xeros = $xeros;
+    
+        return $this;
+    }
+
+    /**
+     * Get xeros
+     *
+     * @return \Studia\XerksesBundle\Entity\Xero 
+     */
+    public function getXeros()
+    {
+        return $this->xeros;
+    }
+}

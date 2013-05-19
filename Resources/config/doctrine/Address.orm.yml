@@ -1,0 +1,22 @@
+Studia\XerksesBundle\Entity\Address:
+    type: entity
+    repositoryClass: Studia\XerksesBundle\Repository\AddressRepository
+    table: address
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        place:
+            type: string
+            length: 20
+        street:
+            type: string
+            length: 20
+        postcode:
+            type: string
+            length: 6
+    oneToOne:
+        xero:
+            targetEntity: Xero
+            mappedBy: address

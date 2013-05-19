@@ -1,0 +1,31 @@
+#src/Aldor/InftechBundle/Resources/config/doctrine/Post.orm.yml
+Studia\XerksesBundle\Entity\PaymentOut:
+    type: entity
+    repositoryClass: Studia\XerksesBundle\Repository\PaymentOutRepository
+    table: paymentout
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        date:
+            type: datetime
+        value:
+            type: float
+    manyToOne:
+        users:
+            targetEntity: User
+            inversedBy: paymentout
+            joinColumn:
+                name: userid
+                referencedColumnName: id
+
+        xeros:
+            targetEntity: Xero
+            inversedBy: paymentout
+            joinColumn:
+                name: xeroid
+                referencedColumnName: id
+
+    lifecycleCallbacks:
+            prePersist: [ setDateAtValue ]
