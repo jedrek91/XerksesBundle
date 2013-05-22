@@ -8,6 +8,11 @@ use Sonata\UserBundle\Entity\BaseUser as BaseUser;
 /**
  * User
  */
+ 
+ /**
+ * @ORM\Entity
+ * @UniqueEntity(fields="email", message="Email already taken")
+ */
 class User extends BaseUser
 {
     /**
@@ -39,7 +44,20 @@ class User extends BaseUser
      * @var \Doctrine\Common\Collections\Collection
      */
     private $favourites;
+	
+	/**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     * @Assert\Email()
+     */
+    protected $email;
 
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Assert\NotBlank()
+     */
+    protected $plainPassword;
+    
     /**
      * Constructor
      */
@@ -60,6 +78,26 @@ class User extends BaseUser
     public function getId()
     {
         return $this->id;
+    }
+	
+	public function getEmail()
+    {
+        return $this->email;
+    }
+
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    public function getPlainPassword()
+    {
+        return $this->plainPassword;
+    }
+
+    public function setPlainPassword($password)
+    {
+        $this->plainPassword = $password;
     }
 
     /**
